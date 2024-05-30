@@ -1,0 +1,680 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: black;
+            font-family: "Graphique";
+            margin: 0;
+            padding: 0;
+            overflow    : hidden;
+
+        }
+
+
+        .wholeWeb {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .navigation {
+
+            display: inline-block;
+            height: 100vh;
+            padding-top: 110px;
+            position: sticky;
+            top: 0;
+            overflow-y: auto;
+            width: 80px;
+
+        }
+
+        .navLogo {
+            width: 40px;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            margin-bottom: 40px;
+            position: relative;
+            left: -15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .main-content-wrapper {
+            overflow-y: auto;
+            /* Enable scrolling for main content */
+            width: calc(100vw-80px);
+            /* Set the height to fill the viewport */
+            height: 100%;
+        }
+
+        .mainContaint {
+            margin-left: 0px;
+            height: 100vh;
+            width: 1300px;
+           
+        }
+
+
+        .poster img {
+            width: 91.4vw;
+            height: 65vh;
+
+        }
+
+        .posterupperThings {
+            position: relative;
+            top: -280px;
+            width: 622;
+            height: 281;
+
+
+        }
+
+        .netflixLogo {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            top: -30px;
+            left: 20px;
+
+        }
+
+        h6 {
+            position: relative;
+            top: -60px;
+            left: 70px;
+            width: 80vw;
+        }
+
+        .moneyheist {
+            width: 400px;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            position: relative;
+            left: 10px;
+            top: -140px;
+
+        }
+
+        .imdb {
+            width: 35px;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            position: relative;
+            left: -350px;
+            top: -50px;
+
+        }
+
+        .posterupperThings>h5 {
+            color: white;
+            position: relative;
+            top: -195px;
+            left: 100px;
+            font-weight: bolder;
+            width: 60vw;
+        }
+
+        .posterupperThings>h4 {
+            color: red;
+            font-weight: bolder;
+            font-size: 17px;
+            position: relative;
+            top: -190px;
+            left: 50px;
+            width: 60vw;
+        }
+
+        .posterupperThings>p {
+            font-weight: bold;
+            color: white;
+            position: relative;
+            top: -220px;
+            left: 86px;
+            width: 60vw;
+
+        }
+
+        button {
+            border-radius: 20px;
+            padding: 6px;
+            margin-left: 30px;
+            position: relative;
+            top: -220px;
+        }
+
+        .posterupperThings>.play {
+            background-color: red;
+            color: white;
+            padding: 10 50;
+            font-weight: bold;
+            border: solid red;
+        }
+
+        .posterupperThings>.watchlater {
+            color: black;
+            font-weight: bold;
+            padding: 10 20;
+            border: solid white;
+
+        }
+
+        .trandingNow>h4 {
+            color: white;
+            width: 62vw;
+            font-size: x-large;
+            font-weight: bolder;
+            position: relative;
+            left: -340px;
+
+        }
+
+        .trandingNow {
+
+            text-align: center;
+            /* Center the content horizontally */
+            margin: 20px auto;
+            /* Add some margin for better placement */
+            position: relative;
+            top: -290px;
+
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: scroll;
+            /* Enable horizontal scrolling for the carousel */
+            white-space: nowrap;
+            /* Prevent items from wrapping to new lines */
+            scroll-snap-type: x mandatory;
+            /* Enable snapping to each item on scroll */
+            scrollbar-width: none;
+            -ms-overflow-style:none;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Opera */
+        }
+
+        .item {
+            scroll-snap-align: start;
+            /* Align items to the left on scroll */
+            margin: 15px;
+            /* Add spacing between items */
+            padding: 0 0px;
+            /* Add padding for content within items */
+            background-color: #f5f5f5;
+            /* Light gray background */
+            border-radius: 0px;
+            /* Add rounded corners */
+            width: 250px;
+            /* Set the width of each item */
+        }
+
+        .item img {
+            height: 200px;
+            width: 150px;
+
+        }
+        footer{
+            width: 1310px;
+            height: 200px;
+            position: relative;
+            top: -200px;
+            overflow-x:hidden;
+            overflow-y:hidden;
+        }
+        .socialLink{
+            display: flex;
+            position: relative;
+            top: 50px;
+            left: 90px;
+        }
+        .socialLink>a>img{
+            width: 50px;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            margin-right: 20px;
+            
+        }
+        .link1>a{
+            color: #a6a5a5f3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .link2>a{
+            color: #a6a5a5f3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .link3>a{
+            color: #a6a5a5f3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .link4>a{
+            color: #a6a5a5f3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .link1{
+            position: relative;
+            top: 60px;
+            left: 90px;
+        }
+        .link2{
+            position: relative;
+            top: -20px;
+            left: 400px;
+        }
+        .link3{
+            position: relative;
+            top: -110px;
+            left: 750px;
+        }
+        .link4{
+            position: relative;
+            top: -190px;
+            left: 1050px;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="wholeWeb">
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li><a href="#"><img src="netflixImgs//searchWhite.png" alt="404 not found" class="navLogo"></a>
+                    </li>
+                    <li><a href="#"><img src="netflixImgs//home white.png" alt="404 not found" class="navLogo"></a></li>
+                    <li><a href="#"><img src="netflixImgs//trending.png" alt="404 not found" class="navLogo"></a></li>
+                    <li><a href="#"><img src="netflixImgs//tv.png" alt="404 not found" class="navLogo"></a></li>
+                    <li><a href="#"><img src="netflixImgs//plus.png" alt="404 not found" class="navLogo"></a></li>
+                    <li><a href="#"><img src="netflixImgs//shuffle.png" alt="404 not found" class="navLogo"></a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="main-content-wrapper">
+            <div class="mainContaint">
+                <div class="poster">
+                    <img src="netflixImgs//moneyHeist.jpg" alt="404 not found" class="poster">
+                </div>
+                <div class="posterupperThings">
+                    <img src="netflixImgs//netflix.png" alt="" class="netflixLogo">
+                    <h6 style="color: white;">S E R I E S</h6>
+                    <img src="netflixImgs//Money-Heist-Logo-PNG.png" alt="" class="moneyheist">
+                    <img src="netflixImgs//imdb.png" alt="" class="imdb">
+                    <h5>8.8/10</h5>
+                    <h4>2B+</h4>
+                    <p>Streams</p>
+                    <button class="play">Play</button>
+                    <button class="watchlater">Watch Later</button>
+                </div>
+                <div class="trandingNow">
+                    <h4>Trending Now</h4>
+                    <div class="carousel">
+                        <div class="item">
+                            <img src="netflixImgs//poster1.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster2.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster3.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster4.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster5.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster6.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster7.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster8.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster9.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster10.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster3.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster6.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster1.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster9.jpg" alt="">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="trandingNow">
+                    <h4>New This Week</h4>
+                    <div class="carousel">
+                        <div class="item">
+                            <img src="netflixImgs//poster10.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster3.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster9.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster8.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster1.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster4.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster5.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster2.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster3.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster1.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster9.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster10.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster2.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster5.jpg" alt="">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="trandingNow">
+                    <h4>Popular On Netflix</h4>
+                    <div class="carousel">
+                        <div class="item">
+                            <img src="netflixImgs//poster9.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster8.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster7.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster6.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster5.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster4.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster3.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster2.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster1.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster10.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster9.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster8.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster7.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster6.jpg" alt="">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="trandingNow">
+                    <h4>Only on Netflix</h4>
+                    <div class="carousel">
+                        <div class="item">
+                            <img src="netflixImgs//poster10.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster5.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster2.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster3.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster6.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster7.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster8.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster1.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster1.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster10.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster9.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster8.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster7.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster6.jpg" alt="">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="trandingNow">
+                    <h4>My List</h4>
+                    <div class="carousel">
+                        <div class="item">
+                            <img src="netflixImgs//poster10.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster3.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster9.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster8.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster1.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster4.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster5.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster2.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster3.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster1.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster9.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster10.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster2.jpg" alt="">
+
+                        </div>
+                        <div class="item">
+                            <img src="netflixImgs//poster5.jpg" alt="">
+
+                        </div>
+                    </div>
+
+                </div>
+                <footer>
+                    <div class="socialLink">
+                        <a href=""><img src="netflixImgs//twitter.png" alt=""></a>
+                        <a href=""><img src="netflixImgs//facebook.png" alt=""></a>
+                        <a href=""><img src="netflixImgs//instagram2.png" alt=""></a>
+                        <a href=""><img src="netflixImgs//youtube.png" alt=""></a>
+                    </div>
+
+                    <div class="link1">
+                        <a href="">Audio Description</a> <br>
+                        <a href="">Investor Relation</a> <br>
+                        <a href="">Legal Notices</a>
+                    </div>
+                    <div class="link2">
+                        <a href="">Help Center</a> <br>
+                        <a href="">Jobs</a> <br>
+                        <a href="">Cookie Preferences</a>
+                    </div>
+                    <div class="link3">
+                        <a href="">Gift Cards</a> <br>
+                        <a href="">Terms of Use</a> <br>
+                        <a href="">Corporate Information</a>
+                    </div>
+                    <div class="link4">
+                        <a href="">Media Center</a> <br>
+                        <a href="">Privacy</a> <br>
+                        <a href="">Contact Us</a>
+                    </div>
+
+                </footer>
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>
